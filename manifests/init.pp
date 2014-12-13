@@ -182,7 +182,7 @@ class ironic (
   case $database_connection {
     /mysql:\/\/\S+:\S+@\S+\/\S+/: {
       $database_backend_package = false
-      require 'mysql::python'
+      require 'mysql::bindings::python'
     }
     /postgresql:\/\/\S+:\S+@\S+\/\S+/: {
       $database_backend_package = 'python-psycopg2'
