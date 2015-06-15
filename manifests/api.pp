@@ -91,6 +91,7 @@ class ironic::api (
 
   include ironic::params
 
+  Class['ironic::db::sync'] ~> Service['ironic-api']
   Ironic_config<||> ~> Service['ironic-api']
 
   # Configure ironic.conf

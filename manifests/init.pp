@@ -156,6 +156,8 @@ class ironic (
 
   include ironic::params
 
+  include ironic::db::sync
+
   Package['ironic'] -> Ironic_config<||>
 
   File {

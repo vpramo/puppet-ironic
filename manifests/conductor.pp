@@ -33,6 +33,8 @@ class ironic::conductor (
 
   include ironic::params
 
+
+  Class['ironic::db::sync'] ~> Service['ironic-conductor']
   Ironic_config<||> ~> Service['ironic-conductor']
 
   # Configure ironic.conf
