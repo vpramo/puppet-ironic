@@ -146,6 +146,10 @@ describe 'ironic' do
       should contain_ironic_config('DEFAULT/auth_strategy').with_value('keystone')
       should contain_ironic_config('DEFAULT/control_exchange').with_value('openstack')
     end
+
+    it 'install db schema' do
+      should contain_class('ironic::db::sync')
+    end
   end
 
   shared_examples_for 'rabbit HA with a single virtual host' do
